@@ -2,6 +2,7 @@ let firstNum
 let secondNum;
 let operator;
 
+
 function operate(a, b, operator) {
     let result;
 

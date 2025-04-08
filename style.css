@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.calc {
+    width: 400px;
+    height: 600px;
+
+    background-color: antiquewhite;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    height: 80px;
+    background-color: lightblue;
+    border: solid black 1px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-row {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+}
+
+
+button {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+
+
+
+.small-button {
+    flex: 1;
+}
+
+.big-button {
+    flex: 2;
+}
