@@ -4,8 +4,8 @@ body {
 }
 
 .calc {
-    width: 400px;
-    height: 600px;
+    /* width: 400px;
+    height: 600px; */
 
     background-color: antiquewhite;
 
@@ -21,33 +21,19 @@ body {
 
 .button-container {
     display: flex;
-    flex-direction: column;
-}
-
-.calc-row {
-    display: flex;
-    flex: 1;
-    gap: 10px;
-}
-
-
-button {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-
-    white-space: nowrap;
-    overflow: hidden;
+    flex-wrap: wrap;
 
 }
 
-
-
-
-.small-button {
-    flex: 1;
+.small-button,
+.big-button {
+    height: 50px;
 }
 
 .big-button {
-    flex: 2;
+    flex: 1000 1 25%;
+}
+
+.small-button {
+    flex: 1 1 25%;
 }
