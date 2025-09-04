@@ -2,6 +2,24 @@ let firstNum
 let secondNum;
 let operator;
 
+let displayNumber;
+
+const display = document.querySelector(".display");
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(button => {
+    button.addEventListener("click", displayNum)
+});
+
+function displayNum(button) {
+    const num = button.target.textContent;
+    displayNumber += num;
+    updateDisplay(displayNumber);
+}
+
+function updateDisplay(displayNumber) {
+    display.textContent = displayNumber;
+}
 
 function operate(a, b, operator) {
     let result;

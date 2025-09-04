@@ -15,6 +15,7 @@ body {
 
 .display {
     height: 80px;
+
     background-color: lightblue;
     border: solid black 1px;
 }
