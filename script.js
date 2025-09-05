@@ -1,20 +1,45 @@
-let firstNum
-let secondNum;
+let firstNum = "";
+let secondNum = "";
 let operator;
 
-let displayNumber;
+let isOperatorPressed = false;
+
+let displayNumber = "";
 
 const display = document.querySelector(".display");
-const buttons = document.querySelectorAll("button");
+const numberButtons = document.querySelectorAll(".number");
+const operatorButtons = document.querySelectorAll(".operator")
 
-buttons.forEach(button => {
-    button.addEventListener("click", displayNum)
+//add event listeners to buttons
+numberButtons.forEach(button => {
+    button.addEventListener("click", numberButtonPress)
 });
 
-function displayNum(button) {
-    const num = button.target.textContent;
-    displayNumber += num;
+operatorButtons.forEach(button => {
+    button.addEventListener("click", operatorButtonPress)
+});
+
+
+function numberButtonPress(button) {
+    const pressedButton = button.target.textContent;
+
+    if (!isOperatorPressed) {
+        firstNum += pressedButton;
+    }
+    else {
+        secondNum += pressedButtonl;
+    }
+
+    displayNumber += pressedButton;
     updateDisplay(displayNumber);
+}
+
+function operatorButtonPress(button) {
+    const pressedButton = button.target.textContent;
+    operator = pressedButton;
+
+    displayNumber = "";
+    updateDisplay()
 }
 
 function updateDisplay(displayNumber) {
@@ -62,4 +87,8 @@ function divide(a, b) {
         return a / b;
     }
     return "cannot divide by 0";
+}
+
+function isNum(str) {
+    return !isNaN(str);
 }
