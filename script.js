@@ -33,6 +33,11 @@ backspaceButton.addEventListener("click", backspaceButtonPress);
 function numberButtonPress(button) {
     const pressedButton = button.target.textContent;
 
+    if (isOperatorPressed && secondNum == undefined) {
+        displayNumber = ""
+        updateDisplay(displayNumber)
+    }
+
     if (!isOperatorPressed) {
         firstNum += pressedButton;
     }
@@ -40,17 +45,29 @@ function numberButtonPress(button) {
         secondNum += pressedButton;
     }
 
+
+
     if (displayNumber == "0") {
         displayNumber = pressedButton;
     }
     else {
         displayNumber += pressedButton;
     }
+
+
     updateDisplay(displayNumber);
 }
 
 function operatorButtonPress(button) {
     const pressedButton = button.target.textContent;
+
+    if (isOperatorPressed && isNum(secondNum)) {
+        eqButtonPress();
+        operator = pressedButton;
+        isOperatorPressed = true;
+        return;
+    }
+
     operator = pressedButton;
     isOperatorPressed = true;
 
