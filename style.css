@@ -20,6 +20,13 @@ body {
     border: solid black 1px;
 }
 
+.above-display {
+    height: 20px;
+
+    background-color: lightblue;
+    border: solid black 1px;
+}
+
 .button-container {
     display: flex;
     flex-wrap: wrap;

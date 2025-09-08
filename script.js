@@ -1,12 +1,14 @@
 let firstNum = "";
 let secondNum = "";
-let operator;
+let operator = "";
 
 let isOperatorPressed = false;
+let isEquationDone = false;
 
 let displayNumber = "";
 
 const display = document.querySelector(".display");
+const aboveDisplay = document.querySelector(".above-display");
 const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator")
 const eqButton = document.querySelector(".equals")
@@ -33,9 +35,20 @@ backspaceButton.addEventListener("click", backspaceButtonPress);
 function numberButtonPress(button) {
     const pressedButton = button.target.textContent;
 
-    if (isOperatorPressed && secondNum == undefined) {
+    if (isOperatorPressed && secondNum == "") {
         displayNumber = ""
         updateDisplay(displayNumber)
+    }
+
+    if (isEquationDone && !isOperatorPressed) {
+        firstNum = "";
+        secondNum = "";
+        operator = "";
+        isOperatorPressed = false;
+        isEquationDone = false;
+
+        displayNumber = "";
+        updateDisplay(displayNumber);
     }
 
     if (!isOperatorPressed) {
@@ -65,11 +78,13 @@ function operatorButtonPress(button) {
         eqButtonPress();
         operator = pressedButton;
         isOperatorPressed = true;
+        // isEquationDone = false;
         return;
     }
 
     operator = pressedButton;
     isOperatorPressed = true;
+    isEquationDone = false;
 
     displayNumber = "";
     updateDisplay(displayNumber)
@@ -90,8 +105,9 @@ function eqButtonPress() {
 
         firstNum = result;
         secondNum = ""
-        operator = undefined;
+        operator = "";
         isOperatorPressed = false;
+        isEquationDone = true;
     }
 }
 
@@ -99,7 +115,8 @@ function clearButtonPress() {
     displayNumber = "";
     firstNum = "";
     secondNum = "";
-    operator = undefined;
+    operator = "";
+    isOperatorPressed = false;
     updateDisplay(displayNumber);
 }
 
@@ -117,6 +134,7 @@ function backspaceButtonPress() {
 
 function updateDisplay(displayNumber) {
     display.textContent = displayNumber;
+    aboveDisplay.textContent = `${firstNum} ${operator} ${secondNum} | isoperatorpressed: ${isOperatorPressed} isequationdone: ${isEquationDone}`;
 }
 
 function operate(a, b, operator) {
