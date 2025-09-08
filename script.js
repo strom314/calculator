@@ -14,6 +14,7 @@ const operatorButtons = document.querySelectorAll(".operator")
 const eqButton = document.querySelector(".equals")
 const clearButtons = document.querySelectorAll(".clear")
 const backspaceButton = document.querySelector(".backspace")
+const decimalButton = document.querySelector(".decimal")
 
 //add event listeners to buttons
 numberButtons.forEach(button => {
@@ -31,6 +32,8 @@ clearButtons.forEach(button => {
 });
 
 backspaceButton.addEventListener("click", backspaceButtonPress);
+
+decimalButton.addEventListener("click", decimalButtonPress)
 
 function numberButtonPress(button) {
     const pressedButton = button.target.textContent;
@@ -68,6 +71,22 @@ function numberButtonPress(button) {
     }
 
 
+    updateDisplay(displayNumber);
+}
+
+function decimalButtonPress() {
+    if (isOperatorPressed) {
+        if (secondNum != "" && !secondNum.includes(".")) {
+            secondNum += ".";
+            displayNumber += ".";
+        }
+    }
+    else {
+        if (firstNum != "" && !firstNum.includes(".")) {
+            firstNum += ".";
+            displayNumber += ".";
+        }
+    }
     updateDisplay(displayNumber);
 }
 
