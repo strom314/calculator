@@ -1,47 +1,67 @@
 body {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0px;
+  margin: 0px;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: grey;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 80px;
+}
+.nadpis {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 30px;
 }
 
 .calc {
-    /* width: 400px;
+  /* width: 400px;
     height: 600px; */
 
-    background-color: antiquewhite;
+  background-color: antiquewhite;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .display {
-    height: 80px;
+  height: 80px;
 
-    background-color: lightblue;
-    border: solid black 1px;
+  background-color: lightblue;
+  border: solid black 1px;
 }
 
 .above-display {
-    height: 20px;
+  height: 20px;
 
-    background-color: lightblue;
-    border: solid black 1px;
+  background-color: lightblue;
+  border: solid black 1px;
 }
 
 .button-container {
-    display: flex;
-    flex-wrap: wrap;
-
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .small-button,
 .big-button {
-    height: 50px;
+  height: 50px;
 }
 
 .big-button {
-    flex: 1000 1 25%;
+  flex: 1000 1 25%;
 }
 
 .small-button {
-    flex: 1 1 25%;
+  flex: 1 1 25%;
 }

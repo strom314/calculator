@@ -189,7 +189,7 @@ function operate(a, b, operator) {
 }
 
 function customRound(value) {
-  return parseFloat(parseFloat(value).toPrecision(8));
+  return parseFloat(parseFloat(value).toPrecision(12));
 }
 
 function add(a, b) {
