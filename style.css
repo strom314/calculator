@@ -5,12 +5,19 @@ body {
   justify-content: center;
   padding-top: 0px;
   margin: 0px;
+
+  background-image: url(./img/773426-774528416.jpg);
+  background-size: 100%;
 }
 
 .header {
   height: 100px;
-  width: 100%;
-  background-color: grey;
+  width: 80%;
+  background-color: rgba(210, 210, 210, 0.6);
+
+  margin-top: 20px;
+
+  border-radius: 10px;
 
   display: flex;
   align-items: center;
@@ -18,6 +25,7 @@ body {
 
   margin-bottom: 80px;
 }
+
 .nadpis {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -25,27 +33,37 @@ body {
 }
 
 .calc {
-  /* width: 400px;
-    height: 600px; */
 
-  background-color: antiquewhite;
+  /* background-color: rgba(255, 255, 255, 0); */
+
+  background: rgba(255, 255, 255, 0.3);
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(4.9px);
+  -webkit-backdrop-filter: blur(4.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+
+  border-radius: 20px;
 
   display: flex;
   flex-direction: column;
+
 }
 
 .display {
   height: 80px;
 
-  background-color: lightblue;
-  border: solid black 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 0;
 }
 
 .above-display {
   height: 20px;
+  border-bottom: 1px black solid;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
 
-  background-color: lightblue;
-  border: solid black 1px;
 }
 
 .button-container {
@@ -56,6 +74,9 @@ body {
 .small-button,
 .big-button {
   height: 50px;
+
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
 }
 
 .big-button {

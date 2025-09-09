@@ -158,7 +158,7 @@ function backspaceButtonPress() {
 
 function updateDisplay(displayNumber) {
   display.textContent = displayNumber;
-  aboveDisplay.textContent = `${firstNum} ${operator} ${secondNum} | isoperatorpressed: ${isOperatorPressed} isequationdone: ${isEquationDone}`;
+  aboveDisplay.textContent = `${firstNum} ${operator} ${secondNum}`;
 }
 
 function operate(a, b, operator) {
