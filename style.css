@@ -13,7 +13,12 @@ body {
 .header {
   height: 100px;
   width: 80%;
-  background-color: rgba(210, 210, 210, 0.6);
+  /* background-color: rgba(210, 210, 210, 0.6); */
+  background: rgba(255, 255, 255, 0.3);
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(0.9px);
+  -webkit-backdrop-filter: blur(4.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 
   margin-top: 20px;
 
@@ -33,7 +38,6 @@ body {
 }
 
 .calc {
-
   /* background-color: rgba(255, 255, 255, 0); */
 
   background: rgba(255, 255, 255, 0.3);
@@ -42,19 +46,21 @@ body {
   -webkit-backdrop-filter: blur(4.9px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 
-
   border-radius: 20px;
 
   display: flex;
   flex-direction: column;
-
 }
 
 .display {
-  height: 80px;
+  height: 40px;
 
+  padding: 20px;
+  padding-left: 10px;
   background-color: rgba(255, 255, 255, 0.3);
   border: 0;
+
+  font-size: 25px;
 }
 
 .above-display {
@@ -63,7 +69,8 @@ body {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   background-color: rgba(255, 255, 255, 0.3);
-
+  padding: 10px;
+  padding-bottom: 5px;
 }
 
 .button-container {
